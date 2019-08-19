@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉式菜单</title>
+    <style>
+        body{
+            background: #CEF3F1;     /*定义页面背景颜色*/
+        }
+        #menubar{
+            margin-left: 0;          /*定义页面内部文本左边距空白大小*/
+        }
+        #menubar ul{
+            text-decoration: none;    /*定义文本无修饰，不显示下划线*/
+            line-height: 20px;        /*行间距20像素*/
+            list-style-type: square;  /*列表样式*/
+        }
+        #menubar li a:link,#menubar li a:visited{  /*定义普通链接和已访问链接的样式*/
+            display: block;
+            text-decoration: none;
+            color: #000;
+            width: 200px;
+            background: #CEF3F1;
+        }
+        #menubar li a:hover{            /*定义鼠标暂停时链接的样式*/
+            color: #fff;
+            background: #1199eb;
+        }
+        #menubar li ul{                /*定义字列表样式*/
+            display: none;
+            width: 200px;
+            margin-left: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        function displaySubMenu(li){          //显示子菜单
+            var subMenu=li.getElementsByTagName("ul")[0];
+            subMenu.style.display="block";
+        }
+        function hideSubMenu(li){             //隐藏子菜单
+            var subMenu=li.getElementsByTagName("ul")[0];
+            subMenu.style.display="none";
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <ul id="menubar">
+        <li style="list-style-type: none" onclick="displaySubMenu(this)"
+            onmouseout="hideSubMenu(this)">                 <!--点击鼠标显示，移除鼠标隐藏-->
+            <a href="#">A</a>
+            <ul style="display: block">
+                <li><a href="#" target="content">a</a></li>
+                <li><a href="#" target="content">b</a></li>
+                <li><a href="#" target="content">c</a></li>
+                <li><a href="#" target="content">d</a></li>
+                <li><a href="#" target="content">e</a></li>
+            </ul>
+        </li>
+        <li style="list-style-type: none" onmouseover="displaySubMenu(this)"
+            onclick="hideSubMenu(this)">
+            <a href="#">B</a>
+            <ul style="display: block">
+                <li><a href="#" target="content">a</a></li>
+                <li><a href="#" target="content">b</a></li>
+                <li><a href="#" target="content">c</a></li>
+                <li><a href="#" target="content">d</a></li>
+                <li><a href="#" target="content">e</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
