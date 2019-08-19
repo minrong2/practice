@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta keywords="HTML5 布局">
+    <meta content="图文混排">
+    <title>图文混排(float实例）</title>
+</head>
+<style>
+    .floatdemo {
+        width:760px;
+        height:360px;
+        margin:0 auto; 		 /*与width结合，使元素居中*/
+        margin-top:20px;
+    }
+    .floatdemo div {
+        width:337px;
+        height:166px;
+        float:left;				/*向左浮动*/
+    }
+    .floatdemo div h2 {
+        border-bottom:#aaa 1px dashed;		/*下边框为1px实线*/
+        height:20px;
+        font-size:13px;
+        color:#82c6bd;
+        float:left;			 /*向左浮动*/
+        width:160px;
+    }
+    .floatdemo div p {
+        color:#999;
+        font-size:12px;
+        line-height:20px;
+    }
+    .floatdemo div .img-left {
+        float:left;
+    }
+    .floatdemo div .img-right {
+        float:right;
+    }
+    .demo03,.demo04 {
+        margin-top:15px;
+    }
+    .demo01 img,.demo02 img {
+        margin-right:10px;
+    }
+    .demo03 img,.demo04 img {
+        margin-left:10px;
+    }
+    .demo01,.demo03 {
+        margin-right:25px;
+    }
+</style>
+<body>
+<div class="floatdemo">
+    <div class="demo01">
+        <img class="img-left" src="image/pic01.jpg" alt="">
+        <h2>我等你</h2>
+        <p>我等你<br>不在别处<br>就在灯火阑珊处<br>我不怕千山万水、岁月沧桑<br>我只愿，某日，君踏马而归</p>
+    </div>
+    <div class="demo02">
+        <img class="img-left" src="image/pic02.jpg" alt="">
+        <h2>走向深秋</h2>
+        <p>走向深秋<br>让时间的永恒<br>与澎湃的秋梦一起疯长<br>为了剪去心中那一缕清愁<br>我再度往前.</p>
+    </div>
+    <div class="demo03">
+        <img class="img-right" src="image/pic03.jpg" alt="">
+        <h2>爱</h2>
+        <p>爱<br>没有距离<br>只要心是在一起<br>爱<br>只有心灵的距离</p>
+    </div>
+    <div class="demo04">
+        <img class="img-right" src="image/pic04.jpg" alt="">
+        <h2>只愿岁月静好</h2>
+        <p>我不想要<br>生活多么的绚丽</span><br>我只想生活平平淡淡<br>我想要找寻那份真实感<br>只愿岁月静好</p>
+    </div>
+</div>
+</body>
+</html>
