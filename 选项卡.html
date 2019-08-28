@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        #div1 .active{
+            background: #feef32;
+        }
+        #div1 div{
+            display: none;
+            width: 200px;
+            height: 100px;
+            background: #bffecb;
+            border: 1px solid #999999;
+        }
+
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementById('div1');        //提取div1
+            var oBtn=oDiv.getElementsByTagName('input');     //提取oDiv里面所有的按钮（input）
+            var aDiv=oDiv.getElementsByTagName('div');       //提取oDiv下面的所有div（按钮下的文本）
+            for(var i=0;i<oBtn.length;i++){                  //循坏给所有的按钮都加上事件
+                oBtn[i].index=i;                              //点击事件
+                oBtn[i].onclick=function ()
+                {
+                    for(var i=0;i<oBtn.length;i++)
+                    {
+                        oBtn[i].className='';                //清除i的样式（按钮的高亮）
+                        aDiv[i].style.display='none';        //隐藏所有div
+                    }
+                    this.className='active';                 //给当前点击按钮样式active
+                    aDiv[this.index].style.display='block';
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="div1">
+    <input class="active" type="button" value="教育">
+    <input type="button" value="文化">
+    <input type="button" value="娱乐">
+    <input type="button" value="科技">
+    <div style="display: block">111</div>
+    <div>222</div>
+    <div>333</div>
+    <div>444</div>
+</div>
+</body>
+</html>
