@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>就业月历</title>
+    <style>
+        *{
+            margin: 0 auto;                                 //居中显示
+        }
+        .div1{
+            width: 390px;
+            height: 620px;
+            background: #d0d3e0;
+            padding: 0;
+            }
+        .active{
+            color: red;
+            background: #121213;
+
+        }
+        ul{
+           padding: 0;
+           margin: 15px;
+           height: 490px;
+        }
+        ul li{
+            list-style-type: none;
+            background-color: #0f0f0f;
+            margin: 10px;
+            float: left;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            color: white;
+        }
+        ul li h2{
+            padding: 10px;
+        }
+        .text{
+            text-align: center;
+            margin: 20px 20px 20px 20px;
+            border: 2px solid #dbdfe6;
+            height: 100px;
+            background: #dcd5d5;
+        }
+        .text h2{margin-top:3px}
+        .text p{
+            padding: 5px;
+            height: 50px;
+            color: #de3333;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var arr=[
+                '利用寒假实习丰富简历，总结经验为节后求职做准备',
+                '利用回家过年，了解家乡就业坏境，寻找家乡就业机会',
+                '春招进入笔试、面试高峰期，抓住金三银四招聘季',
+                '关注企业招聘信息，积极投递简历参与面试，抓住招聘季尾巴',
+                '毕业前抓紧时间投递简历，招聘会进入淡季',
+                '完成学校就业手续办理，领取报到证',
+                '毕业',
+                '暑期实习，不断完善简历，学习面试等相关技巧',
+                '校招网申相继开始，关注心仪企业，及时投递简历',
+                '校园招聘高峰期，关注企业校园宣讲会、招聘会及网申信息',
+                '招聘信息最密集时段，部分企业开始笔试与面试',
+                '笔试、面试高峰期，抓住目标企业，有针对地参加招聘会',
+            ];
+            var oDiv=document.getElementById('tab');
+            var oLi=oDiv.getElementsByTagName('li');
+            var oTxt=oDiv.getElementsByTagName('div')[0];
+
+            for (var i=0;i<oLi.length;i++)
+            {
+                oLi[i].index=i;                         
+                oLi[i].onmouseover=function()
+                {
+                    for(var i=0;i<oLi.length;i++)
+                    {
+                        oLi[i].className='';
+                    }
+                    this.className='active';
+                    oTxt.innerHTML='<h2>'+(this.index+1)+'月就业</h2><p>'+arr[this.index]+'</p>';
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="tab" class="div1">
+    <ul>
+        <li class="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    <div class="text">
+        <h2></h2>
+        <p></p>
+    </div>
+</div>
+</body>
+</html>
