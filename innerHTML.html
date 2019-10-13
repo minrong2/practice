@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li{
+            list-style: none;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var oDiv=document.getElementById("div1");     //获取div1
+            var oTxt=document.createElement("input");     //新建元素input
+            oDiv.appendChild(oTxt);                       //将input插入到div后面
+            var oBtn=document.createElement("input");    //新建按钮
+            oBtn.type="button";
+            oBtn.id="ob1";
+            oBtn.value="插入";
+            oDiv.appendChild(oBtn);                      //将按钮插入到div1后面
+            oBtn.onclick=function () {
+                var oUl=document.getElementById("u1");
+                var oLi=document.createElement("li");
+                oUl.appendChild(oLi);
+                oLi.innerHTML=oTxt.value;
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="div1">
+<ul id="u1">
+    <li>首页</li>
+    <li>新闻</li>
+    <li>娱乐</li>
+</ul>
+</div>
+</body>
+</html>
