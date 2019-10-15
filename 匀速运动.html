@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运动</title>
+    <style>
+        #div1{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 50px;
+            background-color: #de1b0c;
+        }
+    </style>
+    <script>
+        var timer=null;
+        function move(){
+            var oDiv=document.getElementById("div1");
+            clearInterval(timer);                      //保证重复点击时只有一个定时器在工作
+            timer=setInterval(function () {
+                var speed=1;
+                if(oDiv.offsetLeft>=300){
+                    clearInterval(timer)
+                }
+                else
+                {
+                    oDiv.style.left=oDiv.offsetLeft+speed+'px';
+                }
+            },30);
+     }
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="开始" onclick="move()"/>
+<div id="div1">
+</div>
+</body>
+</html>
